@@ -1,0 +1,48 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <div class="col-12 mb-3">
+        <div id="content-wrapper">
+          <div class="container-fluid">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <!-- <a href="">ອາຈານ : {{ object.full_name }} </a> -->
+            </ol>
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fas fa-table text-warning"></i>
+                <!-- Details Of Teacher -->
+              </div>
+              <div class="card-body">
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+                  {{ message }}
+                </div>
+                {% endfor %}
+
+                <!-- <div class="row"> -->
+                  <!-- <div class="col-12"> -->
+                    <form method="POST" action="">
+                      {% csrf_token %}
+                      {% for field in form %}
+                      <div class="form-group"">
+                        {{ field.label_tag }}
+                        {{ field }}
+                      </div>
+                      {% endfor %}
+
+                      <input type="submit" value="ອັບເດດ" class="btn btn-success" />
+
+                      <a href="{% url 'alstudent' %}"><button type="button" class="btn btn-secondary">ກັບຄືນ</button></a>
+                    </form>
+                  <!-- </div> -->
+                <!-- </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endblock %}

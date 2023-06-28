@@ -1,0 +1,39 @@
+{% extends 'publisher/base.html' %}
+
+
+{% block content %}
+
+<div class="container-fluid lao">
+  <div class="row">
+    <div class="col-sm-3" style="color: red">
+      <p style="color: blue"></p>
+    </div>
+
+    <div class="col-sm-6" style="padding-top: 65px;">
+      <div class="card">
+      </div>
+
+      <div class="card mb-2">
+        <div class="card-body">
+
+          <div class="row">
+            <div class="card col-sm-12">
+              <div class="card-header text-primary">
+                {{ books.desc }}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm-2" style="color: red">
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock content %}

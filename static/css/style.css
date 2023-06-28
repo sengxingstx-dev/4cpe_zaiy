@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'phetsarath-ot';
+  src: url('../assets/fonts/NotoSansLao-Regular.ttf');
+}
+
+body {
+  font-family: 'phetsarath-ot';
+}
+
+.lao {
+  font-family: 'phetsarath-ot';
+}

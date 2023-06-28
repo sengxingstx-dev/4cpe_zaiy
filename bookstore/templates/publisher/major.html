@@ -1,0 +1,44 @@
+{% extends 'publisher/base.html' %}
+{% load static %}
+
+
+{% block body %}
+
+<div class="container-fluid lao" style="margin-top: 90px;">
+  <div class="row">
+    <div class="col-md-12">
+        <!-- <h2>Department</h2> -->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ລະຫັດ</th>
+              <th>ຊື່ພາສາລາວ</th>
+              <th>ຊື່ພາສາອັງກິດ</th>
+              <th>ພາກວິຊາ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for major in majors %}
+              <tr>
+                <td>{{ major.id }}</td>
+                <td>{{ major.majname_la }}</td>
+                <td>{{ major.majname_en }}</td>
+                <td>{{ major.dep }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+</div>
+</div>
+
+<script type="text/javascript" src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script> -->
+<!-- <script type="text/javascript" src="{% static 'js/jquery.dataTables.js' %}"></script> -->
+<!-- <script type="text/javascript" src="{% static 'js/main.js' %}"></script> -->
+</body>
+
+</html>
+{% endblock %}

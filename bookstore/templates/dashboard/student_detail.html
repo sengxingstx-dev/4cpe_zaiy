@@ -1,0 +1,52 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <div class="col-12 mb-3">
+        <div id="content-wrapper">
+          <div class="container-fluid">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <!-- <a href="">Teacher : {{ object.full_name }} </a> -->
+            </ol>
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fas fa-table text-warning"></i>
+                <!-- Details Of Teacher -->
+              </div>
+              <div class="card-body">
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+                  {{ message }}
+                </div>
+                {% endfor %}
+
+                <div class="row">
+                  <div class="col-12">
+                    <ul class="list-group">
+                      <li class="list-group-item"><strong>ຊື່ ແລະ ນາມສະກຸນ:</strong> {{ object.full_name }}</li>
+                      <li class="list-group-item"><strong>ເພດ :</strong> {{ object.gender }}</li>
+                      <li class="list-group-item"><strong>ວັນເດືອນປີເກີດ :</strong> {{ object.telephone }}</li>
+                      <li class="list-group-item"><strong>ບ້ານ :</strong> {{ object.village }}</li>
+                      <li class="list-group-item"><strong>ເມືອງ :</strong> {{ object.district }}</li>
+                      <li class="list-group-item"><strong>ແຂວງ :</strong> {{ object.province }}</li>
+                      <li class="list-group-item"><strong>ເບີໂທ :</strong> {{ object.telephone }}</li>
+                      <li class="list-group-item"><strong>ອີເມວ :</strong> {{ object.email }}</li>
+                      <li class="list-group-item"><strong>ສາຂາ :</strong> {{ object.major }}</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="row top-buffer" style="padding-top: 10px">
+                  <div class="col-12">
+                    <a href="{% url 'alstudent' %}"><button type="button" class="btn btn-success">ກັບຄືນ</button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endblock %}
