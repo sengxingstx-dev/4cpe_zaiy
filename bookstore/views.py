@@ -696,14 +696,14 @@ def aabook(request):
         username = current_user.username
         author_id = request.POST['author']
         major_id = request.POST['major']
-        teacher_id = request.POST['teacher']
+        # teacher_id = request.POST['teacher']
 
         # Retrieve the Major instance based on the dep_id
         major = get_object_or_404(models.Major, id=major_id)
-        advisor = get_object_or_404(models.Teacher, id=teacher_id)
+        # advisor = get_object_or_404(models.Teacher, id=teacher_id)
         author = get_object_or_404(models.Student, id=author_id)
 
-        a = Book(title=title, author=author, year=year, advisor=advisor,
+        a = Book(title=title, author=author, year=year,
             desc=desc, cover=cover, pdf=pdf, major=major
         )
         a.save()
