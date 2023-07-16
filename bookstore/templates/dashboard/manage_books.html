@@ -23,27 +23,29 @@
           <div class="card mb-3">
             <div class="card-body">
               <div class="table-responsive">
-                <div class="row mb-3">
+                <a href="{% url 'aabook_form' %}">
+                  <button type="button" class="btn btn-primary">ເພີ່ມປື້ມ</button>
+                </a>
+                <br><br>
+                <!-- <div class="row mb-3">
                   <div class="col">
                     <select class="form-control" id="major-filter">
                       <option value="">All Majors</option>
-                      <!-- Add options for majors here -->
                     </select>
                   </div>
                   <div class="col">
                     <select class="form-control" id="year-filter">
                       <option value="">All Years</option>
                       <option value="2023">2023</option>
-                      <!-- Add options for years here -->
                     </select>
                   </div>
-                </div>
+                </div>  -->
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>ໄອດີ</th>
                       <th>ຫນ້າປົກ</th>
-                      <th>ຫົວຂໍ້</th>
+                      <th>ຊື່ປື້ມ</th>
                       <th>ສາຂາວິຊາ</th>
                       <th>ຜູ້ຂຽນ</th>
                       <!-- <th>ອຈ ທີ່ປືກສາ</th> -->
@@ -79,8 +81,12 @@
                         {% endif %}
                       </td>
                       <td>{{ book.thesis_date }}</td>
-                      <td>
+                      <!-- <td>
                         <a href="{% url 'avbook' book.pk %}"><button type="button" class="btn btn-primary">
+                            ເບີ່ງ</button></a>
+                      </td> -->
+                      <td>
+                        <a href="{{ book.pdf.url }}"><button type="button" class="btn btn-primary">
                             ເບີ່ງ</button></a>
                       </td>
                       <td>

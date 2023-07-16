@@ -701,7 +701,7 @@ def aabook(request):
         # Retrieve the Major instance based on the dep_id
         major = get_object_or_404(models.Major, id=major_id)
         # advisor = get_object_or_404(models.Teacher, id=teacher_id)
-        author = get_object_or_404(models.Student, id=author_id)
+        author = get_object_or_404(models.Teacher, id=author_id)
 
         a = Book(title=title, author=author, year=year,
             desc=desc, cover=cover, pdf=pdf, major=major
